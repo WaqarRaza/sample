@@ -62,7 +62,11 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
         ],
-
+        'incoming_referers' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/incoming-referers.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
