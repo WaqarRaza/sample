@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
-    // Route::apiResource('/posts', PostController::class);
+    Route::apiResource('/posts', PostController::class);
 });
 

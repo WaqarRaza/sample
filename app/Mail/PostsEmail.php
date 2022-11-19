@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Http\Repositories\PostCrudRepository;
+
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -20,9 +20,9 @@ class PostsEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($posts)
     {
-        $this->posts = (new PostCrudRepository)->index(); 
+        $this->posts = $posts; 
     }
 
     /**

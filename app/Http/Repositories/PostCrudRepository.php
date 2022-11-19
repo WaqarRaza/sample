@@ -55,6 +55,12 @@ class PostCrudRepository implements CrudRepository
 
     private function makeSlug()
     {
+        // it can be based upon name and unique
         return str_shuffle(Str::random() . time());
+        // if want unique
+        do {
+            $slug = str_shuffle(Str::random() . time());
+        } while(Post::where('slug', $slug)->exists());
+        return $slug;
     }
 }

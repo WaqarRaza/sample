@@ -50,6 +50,7 @@ class PostController extends Controller
 
     public function show($id, PostCrudRepository $repostory)
     {
+        // we can also find post based upon slug, its all about need of the project
         try {
             return response()->json([
                 'status' => 200,

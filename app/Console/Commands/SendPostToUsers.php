@@ -2,9 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\SendingMail;
 use Illuminate\Console\Command;
-use App\Mail\PostsEmail;
-use Illuminate\Support\Facades\Mail;
 
 class SendPostToUsers extends Command
 {
@@ -29,10 +28,7 @@ class SendPostToUsers extends Command
      */
     public function handle()
     {
-        $users = \App\Models\User::select('name','email')->get();
-
-        Mail::to($users)->queue(new PostsEmail());
-
+        dispatch(new SendingMail());
         return Command::SUCCESS;
     }
 }
