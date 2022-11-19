@@ -1,23 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <h2>Todo List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+                <thead>
+                <tbody>
+                    @forelse($records as $record)
+                        <tr>
+                            <td>{{ $record->title }}</td>
+                            <td>{{ $record->completed ? 'Completed' : 'Not Completed' }}</td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="2"> No record found</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+        </table>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 @endsection
