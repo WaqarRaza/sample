@@ -1,4 +1,4 @@
-<?php namespace App\Http\Repositories;
+<?php namespace App\Repositories;
 
 use App\Models\User;
 

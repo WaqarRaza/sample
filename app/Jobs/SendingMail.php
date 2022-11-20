@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Mail\PostsEmail;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Repositories\PostCrudRepository;
+use App\Repositories\PostCrudRepository;
 
 class SendingMail implements ShouldQueue
 {

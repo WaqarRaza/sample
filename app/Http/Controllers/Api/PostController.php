@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Repositories\PostCrudRepository;
+use App\Repositories\PostCrudRepository;
 use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;

@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'records' =>  collect(Http::get('https://jsonplaceholder.typicode.com/todos')->object())
+            'records' =>  Http::get('https://jsonplaceholder.typicode.com/todos')->object()
         ]);
     }
 }

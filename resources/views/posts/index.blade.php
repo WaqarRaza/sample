@@ -9,7 +9,7 @@
             @forelse ($records as $record)
                 <div class="col-4">
                     <div class="card">
-                        <img src="{{ asset('storage/files/' . $record->image) }}" class="card-img-top" alt="image">
+                        <img src="{{ asset('storage/'.$record->image) }}" class="card-img-top" alt="image">
                         <div class="card-header">{{ $record->title }}</div>
                         <div class="card-body">{{ $record->body }}</div>
                         <div class="card-footer d-flex">

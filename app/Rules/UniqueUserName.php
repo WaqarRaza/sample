@@ -2,7 +2,7 @@
 
 namespace App\Rules;
 
-use App\Http\Repositories\UserRepository;
+use App\Repositories\UserRepository;
 use Illuminate\Contracts\Validation\Rule;
 
 class UniqueUserName implements Rule

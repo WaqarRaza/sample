@@ -28,7 +28,8 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required',
             'body' => 'required',
-            'image' => ['mimes:png,jpeg,jpg',Rule::when($this->route()->getName() === 'posts.store', ['required'])]
+            //'image' => ['mimes:png,jpeg,jpg',Rule::when($this->route()->getName() === 'posts.store', ['required'])]
+            'image' => 'mimes:png,jpeg,jpg|required'
         ];
     }
 }
